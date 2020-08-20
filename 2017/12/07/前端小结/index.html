@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>前端小结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ES6新特性PromisePromise处理异步代码的代码可读性比回调机制要好；问题是如果没有处理Promise的reject，会导致错误被丢进黑洞。 面试问题跨域和前端解决跨域源于浏览器的同源策略限制，一级域名、二级域名、端口有一个不同，都属于跨域行为；前端解决跨域方法不多：Chrome可借助CORS插件代理同域请求到跨域接口；实际编码中可使用CORS(Cross-Origin-Resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端小结">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ES6新特性PromisePromise处理异步代码的代码可读性比回调机制要好；问题是如果没有处理Promise的reject，会导致错误被丢进黑洞。 面试问题跨域和前端解决跨域源于浏览器的同源策略限制，一级域名、二级域名、端口有一个不同，都属于跨域行为；前端解决跨域方法不多：Chrome可借助CORS插件代理同域请求到跨域接口；实际编码中可使用CORS(Cross-Origin-Resource">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-12-07T05:24:38.000Z">
+<meta property="article:modified_time" content="2019-03-25T10:51:22.801Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time datetime="2017-12-07T05:24:38.000Z" itemprop="datePublished">2017-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端小结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>Promise处理异步代码的代码可读性比回调机制要好；问题是如果没有处理Promise的reject，会导致错误被丢进黑洞。</p>
+<h2 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h2><h3 id="跨域和前端解决"><a href="#跨域和前端解决" class="headerlink" title="跨域和前端解决"></a>跨域和前端解决</h3><p>跨域源于浏览器的同源策略限制，一级域名、二级域名、端口有一个不同，都属于跨域行为；<br>前端解决跨域方法不多：Chrome可借助CORS插件代理同域请求到跨域接口；<br>实际编码中可使用CORS(Cross-Origin-Resource-Sharin)和JSONP;<br>JSONP的原理是利用<code> &lt;script&gt;</code> 标签允许跨域资源请求的漏洞实现的，它使用<code>&lt;script&gt;</code>发送跨域请求，并使用一个callback参数将请求信息传递给服务器，服务器返回一个JS脚本包含我们指定的callback函数，然后我们执行callback即可获得服务器返回的内容；由于局限于<code>&lt;script&gt;</code>，所以JSONP只能发送GET请求；<br>还有document.domain 或window.name等一些解决方案；</p>
+<h3 id="web前端性能优化"><a href="#web前端性能优化" class="headerlink" title="web前端性能优化"></a>web前端性能优化</h3><p>一般说来，web前端指网站业务逻辑之前的部分，包括浏览器加载、网站视图模型、图片服务、CDN服务等，主要优化手段有浏览器访问，使用反向代理、CDN等；</p>
+<h4 id="浏览器访问优化"><a href="#浏览器访问优化" class="headerlink" title="浏览器访问优化"></a>浏览器访问优化</h4><h5 id="减少http请求，合理设置http缓存"><a href="#减少http请求，合理设置http缓存" class="headerlink" title="减少http请求，合理设置http缓存"></a>减少http请求，合理设置http缓存</h5><p>减少http的主要手段有合并CSS、合并JavaScript、合并图片<br>恰当的缓存可以大大减少http请求：很少变化的图片资源可以直接通过http header中的Expires设置一个很长的过期头；变化不频繁又可能会变得资源可以使用Last-Modifed来做请求验证</p>
+<h5 id="使用浏览器缓存"><a href="#使用浏览器缓存" class="headerlink" title="使用浏览器缓存"></a>使用浏览器缓存</h5><h5 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h5><p>合并CSS图片，减少请求数；</p>
+<h5 id="应用压缩"><a href="#应用压缩" class="headerlink" title="应用压缩"></a>应用压缩</h5><p>压缩HTML、CSS、JS文件</p>
+<h5 id="CSS放在页面最上部，JS放在页面最下面"><a href="#CSS放在页面最上部，JS放在页面最下面" class="headerlink" title="CSS放在页面最上部，JS放在页面最下面"></a>CSS放在页面最上部，JS放在页面最下面</h5><h5 id="JS代码优化"><a href="#JS代码优化" class="headerlink" title="JS代码优化"></a>JS代码优化</h5><p>1、DOM操作要考虑浏览器的Reflow和Repaint，这些需要消耗资源。<br>2、避免用with、eval、Function 消耗资源、效率低、速度慢；<br>3、减少作用域链查找，减少闭包使用；<br>4、使用字符串拼接</p>
+<h5 id="CSS选择符优化"><a href="#CSS选择符优化" class="headerlink" title="CSS选择符优化"></a>CSS选择符优化</h5><h5 id="异步请求Callback"><a href="#异步请求Callback" class="headerlink" title="异步请求Callback"></a>异步请求Callback</h5><h4 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h4><p>CDN缓存的一般是静态资源，如图片、文件、CSS、script脚本、静态网页等</p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p>同时可以实现负载均衡功能</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/" data-id="cke2ma6uf00029jhu3vo1bl0e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/15/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ES6新特性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/03/%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">测试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/15/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">ES6新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/">前端小结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/03/%E6%B5%8B%E8%AF%95/">测试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
